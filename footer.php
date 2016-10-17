@@ -4,9 +4,17 @@
 	$trivia_title		= get_field('trivia_title');
 
 	wp_reset_postdata(); // reset to the original page data
-?>
+	?>
 
 					<section class="hz-testimony">
+						<?php if(is_home()){
+								//do nothing
+							} else {
+								// include a horizontal rule ?>
+								<hr/>
+								<?php
+							} ?>
+
 						<div class="row">
 							<div class="large-12 medium-12 small-12 columns">
 								<h4 class="text-center hz-tajuk-section">Student Testimony</h4>
@@ -50,11 +58,21 @@
 								<h5>Contact Us</h5>
 								<p><?php echo $contact_us; ?></p>	
 							</div>
-							<div class="large-2 small-12 columns hz-small-font hz-font-white">
-								<h5>Twitter Feed</h5>
-								<p>"lorem ipsum dolor sit amet"</p>
+							<div class="large-2 small-12 columns hz-small-font hz-font-white show-for-medium">
+								<?php if(is_user_logged_in()){ ?>
+									<h5>Logout & Other Links</h5>
+								<?php } else { ?>
+									<h5>Login & other Links</h5>
+								<?php } ?>
+								<?php if(is_user_logged_in()){ ?>
+									<a class="tiny button success" href="<?php echo wp_logout_url( home_url()); ?>">Logout</a>
+								<?php } else { ?>
+									<a class="tiny button success" href="http://mobility.dev/login/">Login</a>
+								<?php } ?>
+								
+								<a class="tiny button warning" href="#0">Submit A Programme</a>
 							</div>
-							<div class="large-2 small-12 hz-font-white columns end">
+							<div class="large-2 small-12 hz-font-white columns show-for-medium end">
 								<h5>Trivia</h5>
 								<?php 
 								$args = array('post_type' => 'trivia','posts_per_page' => 1,'orderby' => 'rand');

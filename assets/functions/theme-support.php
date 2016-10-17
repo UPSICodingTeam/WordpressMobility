@@ -10,6 +10,8 @@ function joints_theme_support() {
 	add_image_size( 'welcome-img', 300, 449, array( 'center', 'center' ) ); // width, height, crop
 	add_image_size( 'testi-img', 80, 80, array('center','center') );
 	add_image_size( 'sub_course-img', 370, 223, array( 'center', 'center' ) ); // width, height, crop);
+	add_image_size( 'staff-img', 150, 150, array( 'center', 'center' ) ); // width, height, crop);
+	add_image_size( 'courseDetail-img', 370, 483, array( 'center', 'center' ) ); // width, height, crop);
 	
 	// Default thumbnail size
 	set_post_thumbnail_size(125, 125, true);

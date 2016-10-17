@@ -366,6 +366,7 @@ button {
 
 .hz-cards{
 	min-height: 385px;
+	min-width: 277px;
 }
 
 .hz-cards-sum {
@@ -503,7 +504,7 @@ button {
 
 .hz-profile-img {
 	border-radius: 150px;
-	border: solid 10px white;
+	border: solid 5px white;
 	margin-bottom: 10px;
 }
 
@@ -512,10 +513,17 @@ button {
 	text-align: center;
 }
 
+.hz-spacer{
+	margin-bottom: 10px;
+}
+
 #hz-accordion-width {
 	margin: 0;
 	padding: 10px ;
 }
+
+
+
 
 
 

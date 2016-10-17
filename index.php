@@ -48,47 +48,65 @@ $sub_course_size	= 'sub_course-img';
 					</div>
 				</div>
 				<div class="row hz-cards-bg clearfix">
-					<div class="large-3 large-offset-3 medium-12 small-12 small-centered columns">
-						<div class="large-12 columns">
-							<a href="summer-camp/" class="hz-normal-text">
-							<div class="row hz-cards hz-cards-sum hvr-float-shadow">
-							<img src="<?php echo $summer_card_image['sizes'][$cardImg_size]; ?>">
-							<div class="large-12 columns text-center">
-								<h4 class="hz-query hz-bold"><?php echo $summer_camp_label; ?></h4>
-								<p class="hz-small-font"><?php echo $summer_camp_description; ?></p>
-								<div class="row hz-button-absolute">
-									<div class="large-8 large-offset-2 columns">
-										<button class="button round small expanded hz-pink">Learn more</button>
-									</div>
-								</div>
-							</div>
-						</div></a>
-						</div>
-					</div>
-					<div class="large-3 medium-12 small-12 columns end">
-						<div class="large-12 columns">
-							<a href="exchange-programmes/" class="hz-normal-text">
-							<div class="row hz-cards hz-cards-ex hvr-float-shadow">
-								<img src="<?php echo $exchange_programme_card_image['sizes'][$cardImg_size]; ?>" >
-								<div class="large-12 columns text-center">
-									<h4 class="hz-query hz-bold"><?php echo $exchange_programme_label; ?></h4>
-									<p class="hz-small-font"><?php echo $exchange_programme_description; ?></p>
-									<div class="row hz-button-absolute">
-										<div class="large-8 large-offset-2 columns">
-										<button class="button round small expanded hz-pink">Learn more</button>
+					<div class="large-3 large-offset-3 medium-3 medium-offset-1 small-12 small-centered columns ">
+						<div class="large-12 columns hz-spacer">
+							<div class="columns">
+								<a href="summer-camp/" class="hz-normal-text">
+									<div class="row hz-cards hz-cards-sum hvr-float-shadow">
+										<div class="show-for-medium">
+											<img src="<?php echo $summer_card_image['sizes'][$cardImg_size]; ?>">
+										</div>
+										<div class="show-for-small-only">
+											<img src="<?php echo $summer_card_image['sizes'][$cardImg_size]; ?>" style="width: 100%;">
+										</div>
+										<div class="large-12 columns text-center">
+											<h4 class="hz-query hz-bold"><?php echo $summer_camp_label; ?></h4>
+											<p class="hz-small-font"><?php echo $summer_camp_description; ?></p>
+											<div class="row hz-button-absolute">
+												<div class="large-8 large-offset-2 columns">
+													<button class="button round small expanded hz-pink">Learn more</button>
+												</div>
+											</div>
 										</div>
 									</div>
-								</div>
-							</div></a>
+								</a>
+							</div>						
 						</div>
 					</div>
-					<div class="row" style="margin-top: 100px;">
-						<div class="large-4 large-offset-4 medium-4 medium-offset-4 small-12 columns text-center">
-							<p class="hz-small-font"><?php echo $cards_statement; ?></p>
-							<hr/>
+					<div class="large-3 medium-3 small-12 small-centered columns end">
+						<div class="large-12 columns hz-spacer">
+							<div class="columns">
+								<a href="exchange-programmes/" class="hz-normal-text">
+									<div class="row hz-cards hz-cards-ex hvr-float-shadow">
+										<div class="show-for-medium">
+											<img src="<?php echo $exchange_programme_card_image['sizes'][$cardImg_size]; ?>" >
+										</div>
+										<div class="show-for-small-only">
+											<img src="<?php echo $exchange_programme_card_image['sizes'][$cardImg_size]; ?>" style="width: 100%;" >
+										</div>
+										<div class="large-12 columns text-center">
+											<h4 class="hz-query hz-bold"><?php echo $exchange_programme_label; ?></h4>
+											<p class="hz-small-font"><?php echo $exchange_programme_description; ?></p>
+											<div class="row hz-button-absolute">
+												<div class="large-8 large-offset-2 columns">
+													<button class="button round small expanded hz-pink">Learn more</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</a>
+							</div>						
 						</div>
 					</div>
 				</div>
+					<div class="row" style="margin-top: 20px;">
+						<div class="large-4 large-offset-4 medium-4 medium-offset-4 small-12 columns text-center">
+							<div class="small-12 columns">
+								<p class="hz-small-font"><?php echo $cards_statement; ?></p>
+							</div>
+							<hr/>
+						</div>
+					</div>
 			</div> <!-- supposed to close hz-menu-->
 		</section>
 		<div style="height:1px; display: block;"></div>
@@ -105,7 +123,7 @@ $sub_course_size	= 'sub_course-img';
 				<h5><?php echo $name; ?>,</h5>
 				<h6><?php echo $position; ?></h6>
 				</div>
-				<div class="large-3 medium-3  small-12 columns end">
+				<div class="large-3 medium-3 show-for-medium columns end">
 					<img src="<?php echo $profile_image['sizes'][$profileImg_size]; ?>">
 				</div>
 			</div>
@@ -143,10 +161,10 @@ $sub_course_size	= 'sub_course-img';
 				<div class="large-3 large-offset-2 medium-3 medium-offset-2 small-12 columns">
 				<?php if($sum_title){
 					?>
-					<img style="border: solid 5px white;" src="<?php echo $sum_img['sizes'][$profileImg_size]; ?>" >
+					<img style="border: solid 5px white; width: 100%;" src="<?php echo $sum_img['sizes'][$profileImg_size]; ?>" >
 				<?php } else {
 					?>
-					<img style="border: solid 5px white;" src="<?php echo $ex_img['sizes'][$profileImg_size]; ?>" >
+					<img style="border: solid 5px white; width: 100%;" src="<?php echo $ex_img['sizes'][$profileImg_size]; ?>"  >
 				<?php } ?>	
 					
 				</div>
@@ -258,21 +276,27 @@ $sub_course_size	= 'sub_course-img';
 						
 						<div class="large-4 medium-4 small-12 columns">
 							<div class="large-12 columns">
-								<div class="row hz-card-course hvr-float-shadow">
+								<div class="row hz-cards hz-card-course hvr-float-shadow">
 									<?php 
 										$summer_featured_img		= get_field('course_image');
 										$summer_featured_desc		= get_field('course_description');
 										
 										$exchange_featured_img		= get_field('programme_image');
 										$exchange_featured_desc		= get_field('programme_description');
+										
+										if($summer_featured_img){ ?>
+											<img src="<?php echo $summer_featured_img['sizes'][$sub_course_size]; ?>" style="width: 100%;">
+										<?php } else { ?>
+											<img src="<?php echo $exchange_featured_img['sizes'][$sub_course_size]; ?>" style="width: 100%;">
+										<?php }
 										?>
-								<img src="<?php echo $summer_featured_img['sizes'][$sub_course_size]; ?>">
-								<img src="<?php echo $exchange_featured_img['sizes'][$sub_course_size]; ?>">
-
 								<div class="large-12 columns text-center" style="margin-top: 10px;">
-									<p class="hz-small-font"><?php echo $summer_featured_desc ?></p>
-									<p class="hz-small-font"><?php echo $exchange_featured_desc ?></p>
-									<div class="row">
+									<?php if($summer_featured_desc){ ?>
+										<p class="hz-small-font"><?php echo wp_trim_words($summer_featured_desc, $num_words = 40, $more = '...' );?></p>
+									<?php } else { ?>
+										<p class="hz-small-font"><?php echo wp_trim_words($exchange_featured_desc, $num_words = 40, $more = '...' );?></p>
+									<?php } ?>
+									<div class="row hz-button-absolute">
 										<div class="large-8 large-offset-2 columns">
 											<a href="<?php the_permalink(); ?>"><button class="button round small expanded hz-pink">Learn More</button></a>
 										</div>

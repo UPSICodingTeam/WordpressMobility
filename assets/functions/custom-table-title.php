@@ -132,7 +132,7 @@ function set_custom_edit_summer_camp_columns($columns) {
 	unset( $columns['title'] );
 	unset($columns['date']);
     $columns['course_title'] = __( 'Course Title', 'your_text_domain' );
-    $columns['featured'] = __('Featured?', 'your_text_domain');
+    $columns['publish'] = __('Publish Status', 'your_text_domain');
     return $columns;
 }
 
@@ -147,12 +147,14 @@ function custom_summer_camp_column( $column, $post_id ) {
             }
             break;
         
-        case 'featured' :
-        	$featured = get_field('featured_course');
-        	if($featured){
-        		echo '<span class="dashicons dashicons-yes"></span>';
+        case 'publish' :
+        	$featured 	= get_post_status();
+        	$link		= get_permalink();
+        	if($featured == 'publish'){
+        		echo '<a href="'.$link.'"><p  style="font-weight:bold; text-decoration:underline;">Published</p></a>';
         	} else {
-	        	echo '<span class="dashicons dashicons-no-alt"></span>';
+	        	echo '<p style="font-weight:bold;">Under Review</p>';
+	        	
         	}         
             break;
         default;
@@ -233,6 +235,9 @@ function set_custom_edit_application_columns($columns) {
 }
 
 function custom_application_column( $column, $post_id ) {
+	 		$post_object = get_field('choose_course_or_programme');
+			$post = $post_object;
+			setup_postdata( $post ); 
     switch ( $column ) {
         case 'applicantsname' :
             $name = get_field('name'); 
@@ -240,19 +245,12 @@ function custom_application_column( $column, $post_id ) {
             break;
         
         case 'chosencourse' :
-        	$post_object = get_field('choose_course_or_programme');
-			if( $post_object ):
-				// override $post
-			$post = $post_object;
-			setup_postdata( $post ); 
-		
+            
 			?>
 		    <div>
-		    	<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-		    	<span>Post Object Custom Field: <?php the_field('field_name'); ?></span>
-		    </div>
-		    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-		<?php endif;
+		    	<p><?php echo $post_object->post_title; ?></p>
+		    </div> <?php
+		   
             break;
             
         case 'email' :
@@ -262,13 +260,13 @@ function custom_application_column( $column, $post_id ) {
         case 'doc' :
         	$file = get_field('upload_proposal');
         	if($file){
-	        	echo '<a href="'+$file['url']+'"><span class="dashicons dashicons-download"></span></a>';
+	        	echo '<a target="blank" href="',$file['url'],'"><span class="dashicons dashicons-download"></span> Download document</a>';
         	} else {
 	        	echo 'No document uploaded';
         	}
             break;
         default: ;
-
+			wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly
     }
 }
 

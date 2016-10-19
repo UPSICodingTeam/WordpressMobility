@@ -31,6 +31,8 @@ require_once(get_template_directory().'/assets/translation/translation.php');
 //include_once(get_template_directory().'/assets/functions/custom-fields.php'); 
 //}
 
+//hide ACF
+add_filter('acf/settings/show_admin', '__return_false');
 
 // Adds useful code for debugging admin interfaces 
 //require_once(get_template_directory().'/assets/functions/admin-debug.php'); 

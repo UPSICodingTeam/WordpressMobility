@@ -41,7 +41,7 @@
 					  <li class="accordion-item" data-accordion-item>
 					    <a href="#" class="accordion-title">DURATION</a>
 					    <div class="accordion-content" data-tab-content>
-					      <? echo $duration . ' Days';?>
+					      <?php echo $duration . ' Days';?>
 					    </div>
 					  </li>
 					  <li class="accordion-item" data-accordion-item>

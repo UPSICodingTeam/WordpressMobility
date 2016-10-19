@@ -27,3 +27,19 @@ function site_scripts() {
     }
 }
 add_action('wp_enqueue_scripts', 'site_scripts', 999);
+
+
+/**
+ * Register and enqueue a custom stylesheet in the WordPress admin.
+ */
+ 
+function wpdocs_enqueue_custom_admin_script() {
+        wp_register_script( 'd3js', get_template_directory_uri() . '/assets/js/d3.js', false, '1.0.0' );
+        wp_enqueue_script( 'd3js' );
+        wp_enqueue_script( 'foundation-js', get_template_directory_uri() . '/vendor/foundation-sites/dist/admin/foundation.min.js', array( 'jquery' ), '6.0', true );
+        wp_enqueue_script( 'fontawesomeCDN', '//use.fontawesome.com/3e0e650a0e.js', array(''), '', true );
+        wp_enqueue_style( 'foundation-css', get_template_directory_uri() . '/vendor/foundation-sites/dist/admin/foundation.min.css', array(), '', 'all' );
+        
+        
+}
+add_action( 'admin_enqueue_scripts', 'wpdocs_enqueue_custom_admin_script' );

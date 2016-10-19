@@ -63,18 +63,18 @@ function custom_dashboard_widget() {
 	echo "
 	<div class='row text-center'>
 		<div class='small-6 columns'>
-			<p style='font-size:10em; font-weight:bold; margin: 0px; padding-left:50px;'>",$number_sum,"</p>
+			<p style='font-size:10em; font-weight:bold; margin: 0px; '>",$number_sum,"</p>
 		</div>
 		<div class='small-6 columns'>
-			<p style='font-size:10em; font-weight:bold; margin: 0px; padding-left:50px;'>",$number_ex,"</p>
+			<p style='font-size:10em; font-weight:bold; margin: 0px; '>",$number_ex,"</p>
 		</div>
 	</div>
 	<div class='row text-center'>
 		<div class='small-6 columns'>
-			<p style='font-size:1em; margin: 0px; padding-left:25px;'>Summer Camps</p>
+			<p style='font-size:1em; margin: 0px; '>Summer Camps</p>
 		</div>
 		<div class='small-6 columns'>
-			<p style='font-size:1em; margin: 0px; padding-left:25px;'>Exchange Programmes</p>
+			<p style='font-size:1em; margin: 0px; '>Exchange Programmes</p>
 		</div>
 	</div>";
 }
@@ -93,18 +93,18 @@ function custom_dashboard_widget1() {
 	echo "
 	<div class='row text-center'>
 		<div class='small-6 columns'>
-			<p style='font-size:10em; font-weight:bold; margin: 0px; padding-left:50px;'>",$number_sum,"</p>
+			<p style='font-size:10em; font-weight:bold; margin: 0px; '>",$number_sum,"</p>
 		</div>
 		<div class='small-6 columns'>
-			<p style='font-size:10em; font-weight:bold; margin: 0px; padding-left:50px;'>",$number_ex,"</p>
+			<p style='font-size:10em; font-weight:bold; margin: 0px; '>",$number_ex,"</p>
 		</div>
 	</div>
 	<div class='row text-center'>
 		<div class='small-6 columns'>
-			<p style='font-size:1em; margin: 0px; padding-left:25px;'>Summer Camps</p>
+			<p style='font-size:1em; margin: 0px; '>Summer Camps</p>
 		</div>
 		<div class='small-6 columns'>
-			<p style='font-size:1em; margin: 0px; padding-left:25px;'>Exchange Programmes</p>
+			<p style='font-size:1em; margin: 0px; '>Exchange Programmes</p>
 		</div>
 	</div>";
 }
@@ -122,18 +122,18 @@ function custom_dashboard_widget2() {
 	echo "
 	<div class='row text-center'>
 		<div class='small-6 columns'>
-			<p style='font-size:10em; font-weight:bold; margin: 0px; padding-left:50px;'>",$number_app,"</p>
+			<p style='font-size:10em; font-weight:bold; margin: 0px; '>",$number_app,"</p>
 		</div>
 		<div class='small-6 columns'>
-			<p style='font-size:10em; font-weight:bold; margin: 0px; padding-left:50px;'>",$number_ex,"</p>
+			<p style='font-size:10em; font-weight:bold; margin: 0px; '>",$number_ex,"</p>
 		</div>
 	</div>
 	<div class='row text-center'>
 		<div class='small-6 columns'>
-			<p style='font-size:1em; margin: 0px; padding-left:25px;'>Submitted</p>
+			<p style='font-size:1em; margin: 0px; '>Submitted</p>
 		</div>
 		<div class='small-6 columns'>
-			<p style='font-size:1em; margin: 0px; padding-left:25px;'>Processed</p>
+			<p style='font-size:1em; margin: 0px; '>Processed</p>
 		</div>
 	</div>";
 }

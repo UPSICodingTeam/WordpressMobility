@@ -1,82 +1,69 @@
-<?php get_header(); ?>
+<?php 
+	// Variables for Exchange Programmes Page
+	
+	$programme_image			= get_field('programme_image');
+	$programme_title			= get_field('programme_title');
+	$programme_desc				= get_field('programme_description');
+	$programme_content			= get_field('programme_content');
+	$whats_included_programme	= get_field('whats_included_programme');
+	$programme_duration			= get_field('programme_duration');
+	$credit_transfer_ep			= get_field('credit_transfer_ep');
+	$fee_partner_ep				= get_field('partner-university_participants_ep');
+	$fee_nonpartner_ep			= get_field('nonpartner-university_participants_ep');
+	$course_itinerary_details	= get_field('course_itinerary_details_ep');
+	
+	//Image Size
+	$courseDetail_img		= 'courseDetail-img';
+	
+	get_header(); ?>
 			
 			<div class="row">
 				<div class=" medium-4 small-12 columns">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder-course.jpeg"/>
+					<img style="width: 100%;" src="<?php echo $programme_image['sizes'][$courseDetail_img]; ?>"/>
 				</div>
 				<div class="medium-8 small-12 columns">
-					<h4>Discover Malay Cuisine</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+					<p><?php echo $programme_desc;?></p>
 					<ul class="accordion" data-accordion data-allow-all-closed="true">
 					  <li class="accordion-item is-active" data-accordion-item>
 					    <a href="#" class="accordion-title">COURSE CONTENT</a>
 					    <div class="accordion-content" data-tab-content>
-					      <ul>
-						      <li>History and Food Culture</li>
-						      <li>Cooking Class: Traditional Dessert (Buah Melaka, Karipap, Bubur Cha Cha)</li>
-					      </ul>
+					      <p><?php echo $programme_content;?></p>
 					    </div>
 					  </li>
 					  <li class="accordion-item" data-accordion-item>
 					    <a href="#" class="accordion-title">WHAT'S INCLUDED</a>
 					    <div class="accordion-content" data-tab-content>
-					      <ul>
-						      <li>Introduction to variety of Malay Herbs: Tumeric, Lemongrass, Calangal, Kaffir Lime</li>
-						      <li>Introduction to traditional Malay cooking equipment: Wood Fire Stove, Stone Mortar, Foot Pedal Pestle</li>
-						      <li>Visits: Terengganu - Rantau Abang and Duyong Island</li>
-						      <li>Tour: Homestay and Kuala Lumpur City Tour</li>
-					      </ul>
+					      <p><?php echo $whats_included_programme;?></p>
 					    </div>
 					  </li>
 					  <li class="accordion-item" data-accordion-item>
 					    <a href="#" class="accordion-title">DURATION</a>
 					    <div class="accordion-content" data-tab-content>
-					      <ul>
-						      <li>13 Days</li>
-					      </ul>
+					      <?php echo $programme_duration . ' Days';?>
 					    </div>
 					  </li>
 					  <li class="accordion-item" data-accordion-item>
 					    <a href="#" class="accordion-title">COURSE FEE</a>
 					    <div class="accordion-content" data-tab-content>
 					      <ul>
-						      <li>Partner University Participants: USD595</li>
-						      <li>Non-partner University Participants: USD659</li>
+						      <li>Partner University Participants: <?php echo $fee_partner_ep; ?></li>
+						      <li>Non-partner University Participants: <?php echo $fee_nonpartner_ep;?></li>
 					      </ul>
 					    </div>
 					  </li>
 					  <li class="accordion-item" data-accordion-item>
 					    <a href="#" class="accordion-title">COURSE ITENERARY</a>
 					    <div class="row accordion-content" data-tab-content id="hz-accordion-width">
-						    <div class="medium-6 small-12 columns">
-							    <p>Day 1</p>
-						    	<ul>
-							      	<li>Briefing</li>
-							      	<li>Modules (Malaysia's Malay Culture, Faculty, Tourism in Malaysia and Malay Language Communication)</li>
-						      	</ul>
-						      	<hr/>
-						      	<p>Day 2</p>
-						      	<ul>
-							      	<li>Depart and Arrive at Homestay</li>
-							      	<li>History and Culture of Malay Food</li>
-							      	<li>Cooking and 'Ketupat' Weaving</li>
-						      	</ul>
-						      	<hr/>
-						    </div>
-						    <div class="medium-6 small-12 columns">
-							    <p>Day 3</p>
-						    	<ul>
-							      	<li>Briefing</li>
-							      	<li>Modules (Malaysia's Malay Culture, Faculty, Tourism in Malaysia and Malay Language Communication)</li>
-						      	</ul>
-						      	<hr/>
-						      	<p>Day 4</p>
-						      	<ul>
-							      	<li>Depart and Arrive at Homestay</li>
-							      	<li>History and Culture of Malay Food</li>
-							      	<li>Cooking and 'Ketupat' Weaving</li>
-						      	</ul>
-						      	<hr/>
+						    <div class="small-12 columns">
+							    <?php if(have_rows('course_itinerary_details_ep')):
+								     	while(have_rows('course_itinerary_details_ep')):
+									     	the_row(); ?>
+									     		<p><?php the_sub_field('day_ep');?></p>
+									     		<?php the_sub_field('activities_ep');?>
+									     		<hr/>
+									     	<?php
+								     	endwhile; 
+							     endif; ?>
 						    </div>
 					    </div>
 					  </li>

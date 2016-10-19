@@ -66,11 +66,24 @@
 								<?php } ?>
 								<?php if(is_user_logged_in()){ ?>
 									<a class="tiny button success" href="<?php echo wp_logout_url( home_url()); ?>">Logout</a>
-								<?php } else { ?>
-									<a class="tiny button success" href="http://mobility.dev/login/">Login</a>
-								<?php } ?>
+								<?php } else { 
+									$loginUrl = site_url( '/login/', 'http' );
+								?>
+									<a class="tiny button success" href="<?php echo $loginUrl;?>">Login</a>
+								<?php } 
+									$submissionUrl = site_url( '/mobility-course-submission-form/', 'http' )
+								?>
+								<?php $user = wp_get_current_user();
+									if ( in_array( 'author' || 'administrator', (array) $user->roles ) ) { ?>
+									    <a class="tiny button warning" href="<?php echo $submissionUrl;?>">Submit A Programme</a>
+									<?php }
+									if (in_array('administrator', (array) $user->roles)){ 
+										$dashboardUrl = site_url( '/wp-admin/', 'http' );
+									?>
+										<a style="margin-top: -13px;" class="tiny button" href="<?php echo $dashboardUrl;?>">Go to Dashboard</a>
+									<?php }
+									?>
 								
-								<a class="tiny button warning" href="#0">Submit A Programme</a>
 							</div>
 							<div class="large-2 small-12 hz-font-white columns show-for-medium end">
 								<h5>Trivia</h5>

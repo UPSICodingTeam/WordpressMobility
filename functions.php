@@ -1,4 +1,5 @@
 <?php
+
 // Theme support options
 require_once(get_template_directory().'/assets/functions/theme-support.php'); 
 
@@ -24,6 +25,12 @@ require_once(get_template_directory().'/assets/functions/page-navi.php');
 require_once(get_template_directory().'/assets/translation/translation.php'); 
 
 ///------ CUSTOM FUNCTIONS -------///
+
+// Add custom fields
+//if( !class_exists('acf') ){
+//include_once(get_template_directory().'/assets/functions/custom-fields.php'); 
+//}
+
 
 // Adds useful code for debugging admin interfaces 
 //require_once(get_template_directory().'/assets/functions/admin-debug.php'); 
@@ -52,7 +59,7 @@ require_once(get_template_directory().'/assets/functions/option-page.php');
 // require_once(get_template_directory().'/assets/functions/related-posts.php'); 
 
 // Use this as a template for custom post types
-// require_once(get_template_directory().'/assets/functions/custom-post-type.php');
+require_once(get_template_directory().'/assets/functions/custom-post-type.php');
 
 // Customize the WordPress login menu
 // require_once(get_template_directory().'/assets/functions/login.php'); 

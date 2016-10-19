@@ -10,7 +10,220 @@ keep it organized. I find it easier to edit
 and change things if they are concentrated
 in their own file.
 
-*/
+*/// Adding New CPT
+
+add_action( 'init', 'cptui_register_my_cpts' );
+function cptui_register_my_cpts() {
+	$labels = array(
+		"name" => __( 'Committee Members', '' ),
+		"singular_name" => __( 'Committee Member', '' ),
+		);
+
+	$args = array(
+		"label" => __( 'Committee Members', '' ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => false,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "staff",
+		"has_archive" => false,
+		"show_in_menu" => true,
+				"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => array( "slug" => "committee", "with_front" => true ),
+		"query_var" => true,
+		"menu_icon" => "dashicons-admin-users",
+		"supports" => false,					);
+	register_post_type( "committee", $args );
+
+	$labels = array(
+		"name" => __( 'Programmes', '' ),
+		"singular_name" => __( 'programme', '' ),
+		);
+
+	$args = array(
+		"label" => __( 'Programmes', '' ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => false,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "programmes",
+		"has_archive" => false,
+		"show_in_menu" => true,
+				"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => array( "slug" => "programmes_offered", "with_front" => true ),
+		"query_var" => true,
+		"menu_icon" => "dashicons-list-view",
+		"supports" => false,					);
+	register_post_type( "programmes_offered", $args );
+
+	$labels = array(
+		"name" => __( 'Summer Camps', '' ),
+		"singular_name" => __( 'Summer Camp', '' ),
+		);
+
+	$args = array(
+		"label" => __( 'Summer Camps', '' ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => false,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "summer_camps",
+		"has_archive" => true,
+		"show_in_menu" => true,
+				"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => array( "slug" => "summer_camp", "with_front" => true ),
+		"query_var" => true,
+		"menu_icon" => "dashicons-palmtree",
+		"supports" => false,					);
+	register_post_type( "summer_camp", $args );
+
+	$labels = array(
+		"name" => __( 'Exchange Programmes', '' ),
+		"singular_name" => __( 'Exchange Programme', '' ),
+		);
+
+	$args = array(
+		"label" => __( 'Exchange Programmes', '' ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => false,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "exchange_programmes",
+		"has_archive" => true,
+		"show_in_menu" => true,
+				"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => array( "slug" => "exchange_programmes", "with_front" => true ),
+		"query_var" => true,
+		"menu_icon" => "dashicons-randomize",
+		"supports" => false,					);
+	register_post_type( "exchange_programmes", $args );
+
+	$labels = array(
+		"name" => __( 'Facilities & Services', '' ),
+		"singular_name" => __( 'Facility & Service', '' ),
+		);
+
+	$args = array(
+		"label" => __( 'Facilities & Services', '' ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => false,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"has_archive" => false,
+		"show_in_menu" => true,
+				"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => array( "slug" => "facilities", "with_front" => true ),
+		"query_var" => true,
+		"menu_icon" => "dashicons-forms",
+		"supports" => false,					);
+	register_post_type( "facilities", $args );
+
+	$labels = array(
+		"name" => __( 'Applications', '' ),
+		"singular_name" => __( 'Application', '' ),
+		);
+
+	$args = array(
+		"label" => __( 'Applications', '' ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => false,
+		"publicly_queryable" => false,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"has_archive" => false,
+		"show_in_menu" => true,
+				"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => array( "slug" => "application", "with_front" => true ),
+		"query_var" => true,
+		"menu_icon" => "dashicons-feedback",
+		"supports" => false,					);
+	register_post_type( "application", $args );
+
+	$labels = array(
+		"name" => __( 'Testimonies', '' ),
+		"singular_name" => __( 'Testimony', '' ),
+		);
+
+	$args = array(
+		"label" => __( 'Testimonies', '' ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => false,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "testimony",
+		"has_archive" => false,
+		"show_in_menu" => true,
+				"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => array( "slug" => "testimony", "with_front" => true ),
+		"query_var" => true,
+		"menu_icon" => "dashicons-format-chat",
+		"supports" => false,					);
+	register_post_type( "testimony", $args );
+
+	$labels = array(
+		"name" => __( 'Trivias', '' ),
+		"singular_name" => __( 'Trivia', '' ),
+		);
+
+	$args = array(
+		"label" => __( 'Trivias', '' ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => false,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "trivia",
+		"has_archive" => false,
+		"show_in_menu" => true,
+				"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => array( "slug" => "trivia", "with_front" => true ),
+		"query_var" => true,
+		"menu_icon" => "dashicons-smiley",
+		"supports" => false,					);
+	register_post_type( "trivia", $args );
+
+// End of cptui_register_my_cpts()
+}
 
 
 // let's create the function for the custom type
